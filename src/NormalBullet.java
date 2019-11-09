@@ -15,7 +15,7 @@ public class NormalBullet extends Bullet {
 
         super.dame = 10;
         super.speed = 1;
-        super.scope = 2;
+        super.scope = 5;
     }
 
     @Override

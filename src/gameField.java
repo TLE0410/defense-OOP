@@ -47,6 +47,12 @@ public class gameField {
         try {
             for (Enemy e : enemys) {
                 e.tick();
+                if (e.health == 0) {
+                    enemys.remove(e);
+                    gold += 5;
+                    continue;
+                }
+
 
                 // check enemy is run able
                 if (map.check(e.x, e.y)) {
