@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95d744b8-229b-424b-ab4c-c79775540c1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Map0.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MouseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Assets.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Assets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Display$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Display$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Display.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Map.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Map.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Map1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Map1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/NormalBullet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/NormalEnemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/NormalEnemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/gameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/gameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/gameState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/gameState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/myDraggableComponent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/myDraggableComponent$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/myDraggableComponent$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/myDraggableComponent$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/myDraggableComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/myDraggableComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Display.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Display.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Map1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Map1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NormalEnemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalEnemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myDraggableComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myDraggableComponent.java" afterDir="false" />
-    </list>
+    <list default="true" id="95d744b8-229b-424b-ab4c-c79775540c1e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,10 +15,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/myDraggableComponent.java">
+        <entry file="file://$PROJECT_DIR$/src/Display.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="43" column="54" selection-start-line="43" selection-start-column="54" selection-end-line="43" selection-end-column="54" />
+            <state relative-caret-position="348">
+              <caret line="122" selection-start-line="122" selection-end-line="122" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Assets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="365" column="56" lean-forward="true" selection-start-line="365" selection-start-column="56" selection-end-line="365" selection-end-column="56" />
+            <state relative-caret-position="359">
+              <caret line="374" column="48" selection-start-line="374" selection-start-column="48" selection-end-line="374" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,10 +51,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Tower.java">
+        <entry file="file://$PROJECT_DIR$/src/Bullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            <state relative-caret-position="204">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -99,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+            <state relative-caret-position="205">
+              <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -326,13 +295,21 @@
       <option name="presentableId" value="Default" />
       <updated>1573014625963</updated>
     </task>
+    <task id="LOCAL-00001" summary="sun day">
+      <created>1573396152604</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573396152604</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14599092" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14599092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -341,7 +318,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.32405892" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32405892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -361,7 +338,8 @@
     </layout>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="sun day" />
+    <option name="LAST_COMMIT_MESSAGE" value="sun day" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/enermy.java" />
@@ -443,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Bullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/NormalBullet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -518,16 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Display.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myDraggableComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -549,13 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -613,11 +567,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Assets.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="365" column="56" lean-forward="true" selection-start-line="365" selection-start-column="56" selection-end-line="365" selection-end-column="56" />
+        <state relative-caret-position="359">
+          <caret line="374" column="48" selection-start-line="374" selection-start-column="48" selection-end-line="374" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Bullet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Display.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="122" selection-start-line="122" selection-end-line="122" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
