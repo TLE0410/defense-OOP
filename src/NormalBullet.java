@@ -15,7 +15,7 @@ public class NormalBullet extends Bullet {
 
         super.dame = 10;
         super.speed = 1;
-        super.scope = 2;
+        super.scope = 5;
     }
 
     @Override
@@ -29,9 +29,8 @@ public class NormalBullet extends Bullet {
         if (timeHit <= 0 && target != null) {
             boolean pX = x < target.x;
             boolean pY = y < target.y;
-            int speedX = speed + Math.abs(target.x - x)/40;
-            int speedY = speed + Math.abs(target.y - y)/40;
-            System.out.println(speedX +" " + speedY);
+            int speedX = speed + Math.abs(target.x - x)/50;
+            int speedY = speed + Math.abs(target.y - y)/50;
 
             if (pX) x += speedX;
             else x -= speedX;

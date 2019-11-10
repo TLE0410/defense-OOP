@@ -13,6 +13,10 @@ public class Game implements Runnable{
     private BufferStrategy bs;
     private Graphics g;
 
+    //Input
+
+    private static MouseManager mouseManager;
+
     //State
     private State gameState;
 
@@ -21,6 +25,7 @@ public class Game implements Runnable{
         this.title = title;
         this.width = width;
         this.height = height;
+        mouseManager = new MouseManager();
 
         init();
 
@@ -32,6 +37,11 @@ public class Game implements Runnable{
     private void init(){
 
         display = new Display(title, width, height);
+        display.getFrame().addMouseListener(mouseManager);
+        display.getFrame().addMouseMotionListener(mouseManager);
+        display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
+
         Assets.init();
 
         gameState = new gameState(this);
@@ -58,9 +68,6 @@ public class Game implements Runnable{
         g.clearRect(0,0,width,height);
 
         //DRAW HERE
-
-        g.drawImage(Assets.bg,0,0,null);
-
 
         if(gameState.getState() != null)
             gameState.getState().render(g);
@@ -115,6 +122,10 @@ public class Game implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+    public static MouseManager getMouseManager () {
+        return mouseManager;
     }
 
 }

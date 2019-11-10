@@ -8,7 +8,8 @@ public class gameState extends State {
 
     public gameState(Game game) {
         super(game);
-        GameField = new gameField();
+        GameField = new gameField(game);
+
     }
 
     @Override
@@ -19,6 +20,10 @@ public class gameState extends State {
     @Override
     public void render(Graphics g) {
         GameField.render(g);
+    }
+
+    public MouseManager getMouseManager () {
+        return game.getMouseManager();
     }
 
 }

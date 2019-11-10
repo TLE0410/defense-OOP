@@ -51,7 +51,7 @@ public abstract class Enemy {
         isAhead = false;
     }
     public void down () {
-        System.out.println("go down");
+       // System.out.println("go down");
         y += this.speed;
         x += Math.random()*(1-(-1)+1) + (-1);
     }

@@ -2,10 +2,11 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addMouseMotionListener;
 
 public class Display {
 
@@ -16,6 +17,7 @@ public class Display {
     protected int width;
     protected int height;
     protected Game game;
+    protected MouseListener mouse;
 
     public JLabel jB = new JLabel();
 
@@ -35,6 +37,45 @@ public class Display {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         waitSense();
+        mouse = new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+
+
+        };
+        addMouseMotionListener(new MouseMotionListener() {
+
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                System.out.println(e.getX()+ " " + e.getY() + "dragging");
+            }
+
+            @Override
+            public void mouseMoved(MouseEvent e) { }
+
+        });
 
         canvas = new Canvas();
         canvas.setPreferredSize(new Dimension(width, height));

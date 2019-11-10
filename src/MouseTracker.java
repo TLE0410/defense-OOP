@@ -79,6 +79,6 @@ public class MouseTracker extends Frame implements MouseListener,
 
     // execute application
     public static void main(String args[]) {
-        //MouseTracker application = new MouseTracker();
+        MouseTracker application = new MouseTracker(new Frame());
     }
 } // end class MouseTracker
