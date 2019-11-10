@@ -1,8 +1,10 @@
+import java.awt.*;
 import java.util.HashMap;
 
 public abstract class Map {
 
     int valid;
+    protected int firstLand;
     public Map () {
         valid = 0;
     }
@@ -13,6 +15,7 @@ public abstract class Map {
     public abstract boolean up (int x, int y);
     public abstract boolean down (int x, int y);
     public abstract boolean isTarget (Enemy e);
+    public abstract boolean isLandTower (int x, int y);
 
-    public abstract void render ();
+    public abstract void render (Graphics g);
 }
