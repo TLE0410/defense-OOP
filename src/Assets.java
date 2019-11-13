@@ -8,7 +8,7 @@ public class Assets {
     public static final int eWidth = 56, eHeight = 47;
     public static final int width = 70, height = 130, offset = 26, fOffset = 22;
     public static final int offsetf = 28, fOffsetf = 39, widthf = 70, offsetW = 12;
-    public static BufferedImage p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, bg, bg0;
+    public static BufferedImage p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, bg, bg0, newGame, quitButton;
     public static BufferedImage fp1, fp2, fp3, fp4, fp5, fp6, fp7, fp8, fp9, fp10, fp11, fp12,
             t1, bullet, blood, t2;
     public static BufferedImage n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, nf;
@@ -374,6 +374,8 @@ public class Assets {
         bg = resize(bg, 700, 1000);
         bg0 = imageLoader.loadImage("image/back_ground/bg0.jpg");
         bg0 = resize(bg0, 700, 1000);
+        newGame = imageLoader.loadImage("image/new game.jpg");
+        quitButton = imageLoader.loadImage("image/menus/quitB.png");
 
     }
 

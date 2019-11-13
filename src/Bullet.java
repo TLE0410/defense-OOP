@@ -8,7 +8,8 @@ public abstract class Bullet {
         this.x = x;
         this.y = y;
     }
-    public abstract void tick (Enemy target);
+    public abstract void choose(Enemy e);
+    public abstract void tick ();
     public abstract void render (Graphics g);
-    public abstract void rest();
+    public abstract void reset();
 }

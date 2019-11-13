@@ -5,8 +5,18 @@ public class Map0 extends Map {
     int[] minY = {45,350,612};
     int maxX = 900, minX = -100;
 
+
     public Map0() {
         firstLand = 50;
+        turn = 3;
+        delta = 0;
+        lastTime = System.currentTimeMillis();
+
+        rest = 8;
+        numberEnemy = new int[turn];
+        numberEnemy[0] = 1;
+        numberEnemy[1] = 2;
+        numberEnemy[2] = 3;
     }
 
     @Override
@@ -54,7 +64,7 @@ public class Map0 extends Map {
     public boolean down(int x, int y) {
 
         if ((y <= minY[1] + 20 && x >= 860) || (y <= minY[2] +20 && y >= minY[1] && x <= 100)) {
-            System.out.println("down is calling");
+
             return true;
         }
         else
@@ -83,6 +93,14 @@ public class Map0 extends Map {
                 return true;
         }
         return false;
+    }
+
+    @Override
+    public void tick() {
+        now = System.currentTimeMillis();
+        delta += (now - lastTime)/1000;
+        lastTime = now;
+       // System.out.println(delta);
     }
 
 

@@ -68,6 +68,11 @@ public class Map1 extends Map {
         return false;
     }
 
+    @Override
+    public void tick() {
+
+    }
+
 
     @Override
     public void render(Graphics g) {

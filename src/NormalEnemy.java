@@ -26,18 +26,20 @@ public class NormalEnemy extends Enemy {
         if (isAhead)
             g.drawImage(Assets.normalEnermy.get(act), x, y, null);
         else {
-            System.out.println("flip is calling");
+           // System.out.println("flip is calling");
             g.drawImage(Assets.resize(Assets.normalEnemyF.get(act),Assets.eHeight, Assets.eWidth), x, y, null);
         }
     }
 
     public void valid () {
-        if (x > 985 )
-            x = 985;
+        if (x > 975 )
+            x = 975;
         if (y > 685)
             y = 685;
         if ( y < 45)
             y = 45;
+        if (x < 0)
+            x += speed;
     }
 
 }

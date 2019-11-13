@@ -1,9 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 
 public class Game implements Runnable{
-    private Display display;
+    protected Display display;
     protected static int width, height;
     private String title;
 
@@ -32,6 +35,22 @@ public class Game implements Runnable{
     }
     public void waiting () {
         display.game = this;
+
+        while (true) {
+            System.out.println("");
+            if (getMouseManager().prX >= 500 && getMouseManager().prX < 780 && getMouseManager().prY > 250 && getMouseManager().prY < 360) {
+                start();
+               // System.out.println("pressing");
+                display.frame.remove(display.pane);
+
+                break;
+            }
+            if (getMouseManager().prX >= 500 && getMouseManager().prX < 780 && getMouseManager().prY > 430 && getMouseManager().prY < 530) {
+                display.frame.dispatchEvent(new WindowEvent(display.frame, WindowEvent.WINDOW_CLOSING));
+            }
+        }
+
+
     }
 
     private void init(){
