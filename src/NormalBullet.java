@@ -17,9 +17,10 @@ public class NormalBullet extends Bullet {
         isRender = true;
         eX = 0;
         eY = 0;
+        time = 50;
 
-        super.dame = 20;
-        super.speed = 3;
+        super.dame = 10;
+        super.speed = 1;
         super.scope = 5;
     }
 
@@ -35,25 +36,27 @@ public class NormalBullet extends Bullet {
         else
             isReady = false;
         if (isReady) {
-            System.out.println("i am ready " + e.x +" " + e.y);
+           // System.out.println("i am ready " + e.x +" " + e.y);
             target = e;
         }
     }
 
     @Override
     public void tick() {
-
-
+        //System.out.println("time hit " + timeHit);
         //System.out.println(eX+" "+eY);
         if (target != null) {
-            eX = target.x;
+            if (x - eX > 0)
+                eX = target.x - (speed /(int)target.speed)*2;
+            else
+                eX = target.x + (speed /(int)target.speed)*2;
             eY = target.y;
         } else {
-            System.out.println("no target");
+            //System.out.println("no target");
         }
        // double dis = Math.sqrt((x-eX)*(x-eY) + (y - eY)*(y - eY));
         if (timeHit <= 0 && eY !=0 && eX!= 0) {
-            System.out.println("shooting");
+            //System.out.println("shooting");
             boolean pX = x < eX;
             boolean pY = y < eY;
 
@@ -73,17 +76,18 @@ public class NormalBullet extends Bullet {
             if (pY && y > eY)
                 this.y = eY;
             if (!pY && y < eY)
-                this.y = eY;///x y > scope reset
+                this.y = eY;
+
         } else {
             reset();
             timeHit--;
         }
 
-        // check if bullet into enemy
-        if (x == eX && y == eY || Math.sqrt((x-eX)*(x-eX) + (y - eY)*(y - eY)) > 200){
+        // check if bullet into enemy or bullet out bound
+        if (x == eX && y == eY || Math.sqrt((x-initX)*(x-initX) + (y - initY)*(y - initY)) >= 100){
            this.x = initX;
            this.y = initY;
-            timeHit = 50;
+            timeHit = time;
         }
     }
 
@@ -91,7 +95,6 @@ public class NormalBullet extends Bullet {
     public void render(Graphics g) {
         if (timeHit <= 0 && x != initX && y != initY)
             g.drawImage(Assets.bullet, x, y, null);
-
     }
 
     public void reset () {

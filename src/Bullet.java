@@ -2,7 +2,7 @@ import java.awt.*;
 
 public abstract class Bullet {
     protected int x, y;
-    protected int dame, speed, scope;
+    protected int dame, speed, scope, time;
 
     public Bullet (int x, int y) {
         this.x = x;

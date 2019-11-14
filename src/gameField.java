@@ -1,13 +1,11 @@
 import java.awt.*;
 import java.awt.event.WindowEvent;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.List;
-import java.util.Queue;
 
 public class gameField {
 
-    private List<Enemy> enemys;
+    private List<Enemy> enemies;
     private List<Tower> towers;
     private Queue<Map> maps;
     private Map map;
@@ -23,7 +21,8 @@ public class gameField {
 
     //map
 
-    private boolean isCount;
+    private boolean isCount, ss;
+    private int wave = 0;
 
     public gameField (Game game) {
         isDragging = false;
@@ -37,7 +36,12 @@ public class gameField {
         maps = new LinkedList<>();
 
         //constructor enemy
-        enemys = new ArrayList<>();
+        enemies = new ArrayList<>();
+
+        for (int i = 0; i < 10; ++i) {
+                enemies.add(new NormalEnemy(i*(-100) - 100, 50));
+        }
+        ss = false;
 
         //constructor tower and bullet
         towers = new ArrayList<>();
@@ -51,12 +55,21 @@ public class gameField {
     }
 
     public void tick() {
-
+        System.out.println("number enemy " + enemies.size());
         map.tick();
         isCount = false;
+        if (!ss) {
+            if (map.delta < 10) {
+                isCount = true;
+            } else {
+                ss = true;
+                isCount = false;
+            }
+        }
 
         //if start game or empty enemy in turn
         // create new turn
+        /*
         if ((enemys.isEmpty() && map.numberEnemy[map.turn-1] <= 0) || map.turn == 3) {
             isCount = true;
 
@@ -72,7 +85,10 @@ public class gameField {
             if (map.delta > 8)
                 map.delta = -1;
 
-        } else {
+        }
+
+
+
 
             // after 15 second one new turn enemy create until all enemy of turn run out
             if (map.delta > 15 && map.numberEnemy[map.turn-1] >=0){
@@ -87,91 +103,102 @@ public class gameField {
 
             if (map.delta >= 15)
                 map.delta = -1;
-
-
-
-            try {
-                for (Enemy e : enemys) {
-                    e.tick();
-                    if (e.health == 0) {
-                        enemys.remove(e);
-                        gold += 5;
-                        continue;
-                    }
-
-
-                    // check enemy is run able
-
-                    if (map.check(e.x, e.y)) {
-                        if (map.left(e.x, e.y)) {
-                            e.left();
-                            // System.out.println("left");
-                        }
-                        if (map.right(e.x, e.y)) {
-                            e.right();
-                            //System.out.println("right");
-                        }
-                        if (map.up(e.x, e.y)) {
-                            e.up();
-                            //System.out.println("up");
-                        }
-                        if (map.down(e.x, e.y)) {
-                            e.down();
-                            // System.out.println("down");
-                        }
-                        //check if enemy arrived target
-                        if (map.isTarget(e)) {
-                            enemys.remove(e);
-                            head--;
-                        }
-
-                    } else {
-                        if (map.isTarget(e)) {
-                            enemys.remove(e);
-                            head--;
-                        }
-                        if (e.x <= 0) {
-                            //System.out.println("x out bound right side");
-                            e.x += e.speed;
-                        } else if (e.x >= 900) {
-                            e.x -= e.speed;
-                            //System.out.println(" x out bound left side");
-                            // System.out.println(e.x);
-                        } else if (map.check(e.x, e.y + (int) e.speed)) {
-                            // System.out.println("y can't be reach");
-                            e.y += e.speed;
-                        } else if (map.check(e.x, e.y - (int) e.speed)) {
-                            e.y -= e.speed;
-                            // System.out.println("y out bound");
-                        } else {
-                            System.out.println(e.x + " " + e.y);
-                            //System.out.println("never call me");
-                            e.left();
-                        }
-
-                    }
-
-
+            */
+            if (enemies.isEmpty()) {
+                for (int i = 0; i < 5; ++i) {
+                    enemies.add(new NormalEnemy(-i*30, 50));
                 }
-            } catch (Exception e) {
-                System.out.println("all enemy killed");
-
-                win = true;
+                return;
             }
 
-            // status of enemy
-            act++;
+            if (ss) {
+                try {
+                    for (Enemy e : enemies) {
+                        e.tick();
+                        if (e.health <= 0) {
+                            enemies.remove(e);
+                            gold += 5;
+                            continue;
+                        }
+
+                        // check enemy is run able
+
+                        if (map.check(e.x, e.y)) {
+                            if (map.left(e.x, e.y)) {
+                                e.left();
+                                // System.out.println("left");
+                            }
+                            if (map.right(e.x, e.y)) {
+                                e.right();
+                                //System.out.println("right");
+                            }
+                            if (map.up(e.x, e.y)) {
+                                e.up();
+                                //System.out.println("up");
+                            }
+                            if (map.down(e.x, e.y)) {
+                                e.down();
+                                // System.out.println("down");
+                            }
+                            //check if enemy arrived target
+                            if (map.isTarget(e)) {
+                                enemies.remove(e);
+                                head--;
+                            }
+
+                        } else {
+                            if (map.isTarget(e)) {
+                                enemies.remove(e);
+                                head--;
+                            }
+                            if (e.x <= 0) {
+                                //System.out.println("x out bound right side");
+                                e.x += e.speed;
+                            } else if (e.x >= 900) {
+                                e.x -= e.speed;
+                                //System.out.println(" x out bound left side");
+                                // System.out.println(e.x);
+                            } else if (map.check(e.x, e.y + (int) e.speed)) {
+                                // System.out.println("y can't be reach");
+                                e.y += e.speed;
+                            } else if (map.check(e.x, e.y - (int) e.speed)) {
+                                e.y -= e.speed;
+                                // System.out.println("y out bound");
+                            } else {
+                                System.out.println(e.x + " " + e.y);
+                                //System.out.println("never call me");
+                                e.left();
+                            }
+
+                        }
+
+
+                    }
+                } catch (Exception e) {
+                    System.out.println("all enemy killed");
+
+                    win = true;
+                }
+
+                // status of enemy
+                act++;
+            }
 
             for (Tower t : towers) {
-
-                t.bullet.tick();
-                for (Enemy e : enemys) {
-
+                for (int i =0; i < 5 - enemies.size(); ++i) {
+                    t.bullet.tick();
+                }
+                for (int i = 0; i < enemies.size(); ++i) {
+                    t.bullet.tick();
+                    Enemy e = enemies.get(i);
                     int dis = (int) Math.sqrt((t.x - e.x) * (t.x - e.x) + (t.y - e.y) * (t.y - e.y));
 
                     if (dis <= t.scope && e.health > 0) {
-                        System.out.println("choose");
+                        //System.out.println("choose");
                         t.bullet.choose(e);
+                    } else {
+                     //   System.out.println("dis " + dis);
+                        t.bullet.choose(null);
                     }
                     /*
                     else {
@@ -179,11 +206,9 @@ public class gameField {
                     }
 
                      */
-
                     //Collision
-
                     if (Math.abs(t.bullet.x - e.x) <= t.bullet.scope && Math.abs(t.bullet.y - e.y) <= t.bullet.scope && e.health > 0) {
-                        e.health -= t.bullet.dame;
+                        enemies.get(i).health -= t.bullet.dame;
                     }
                 }
             }
@@ -206,8 +231,6 @@ public class gameField {
 
             }
 
-        }
-
     }
 
     public void render(Graphics g) {
@@ -219,6 +242,7 @@ public class gameField {
         g.drawString("head ", 1030, 50);
         g.drawString(head +"", 1030, 100);
         if (head <= 0) {
+            game.stop();
             g.drawString("lose", 1050, 600);
         }
         g.setColor(Color.orange);
@@ -227,18 +251,25 @@ public class gameField {
 
         if (act >= Assets.aHead.size()-1)
             act = 0;
+        /*
         try {
-            for (Enemy e : enemys) {
+            for (Enemy e : enemies) {
                 e.render(g);
             }
         } catch (Exception e) {
-            if (enemys.isEmpty()) {
+            if (enemies.isEmpty()) {
                 g.setColor(Color.red);
                 g.setFont(new Font("TimesRoman", Font.PLAIN, 80));
                 g.drawString("win", 1050, 500);
             }
         }
 
+         */
+
+        for (Enemy e : enemies) {
+            if ( e != null && e.health > 0)
+                e.render(g);
+        }
         for (Tower t : towers) {
             t.render(g);
             t.bullet.render(g);

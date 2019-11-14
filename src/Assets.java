@@ -6,12 +6,11 @@ import java.util.List;
 
 public class Assets {
     public static final int eWidth = 56, eHeight = 47;
-    public static final int width = 70, height = 130, offset = 26, fOffset = 22;
-    public static final int offsetf = 28, fOffsetf = 39, widthf = 70, offsetW = 12;
-    public static BufferedImage p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, bg, bg0, newGame, quitButton;
-    public static BufferedImage fp1, fp2, fp3, fp4, fp5, fp6, fp7, fp8, fp9, fp10, fp11, fp12,
-            t1, bullet, blood, t2;
-    public static BufferedImage n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, nf;
+    //public static final int width = 70, height = 130, offset = 26, fOffset = 22;
+    //public static final int offsetf = 28, fOffsetf = 39, widthf = 70, offsetW = 12;
+    public static BufferedImage bg, bg0, newGame, quitButton;
+    public static BufferedImage t1, bullet, blood, t2;
+    public static BufferedImage n1, n2;
     public static List<BufferedImage> aHead, normalEnermy, normalEnemyF, tanker, tankerF;
     public static Image start;
 

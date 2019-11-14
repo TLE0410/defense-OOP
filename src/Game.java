@@ -37,7 +37,7 @@ public class Game implements Runnable{
         display.game = this;
 
         while (true) {
-            System.out.println("");
+            System.out.print("");
             if (getMouseManager().prX >= 500 && getMouseManager().prX < 780 && getMouseManager().prY > 250 && getMouseManager().prY < 360) {
                 start();
                // System.out.println("pressing");
@@ -111,11 +111,11 @@ public class Game implements Runnable{
             delta+= (now - lastTime)/timePerTick;
             lastTime = now;
 
-            if(delta >=16) {
+            if(delta >=20) {
 
                 tick();
                 render();
-                delta -=16;
+                delta -=20;
             }
         }
 
