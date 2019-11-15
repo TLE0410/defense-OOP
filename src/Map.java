@@ -20,11 +20,11 @@ public abstract class Map {
         valid = 0;
     }
 
-    public abstract boolean check (int a, int b);
-    public abstract boolean left (int x, int y);
-    public abstract boolean right (int x, int y);
-    public abstract boolean up (int x, int y);
-    public abstract boolean down (int x, int y);
+    public abstract boolean check (double a, double b);
+    public abstract boolean left (double x, double y);
+    public abstract boolean right (double x, double y);
+    public abstract boolean up (double x, double y);
+    public abstract boolean down (double x, double y);
     public abstract boolean isTarget (Enemy e);
     public abstract boolean isLandTower (int x, int y);
 

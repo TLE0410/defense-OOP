@@ -11,7 +11,8 @@ public class Assets {
     public static BufferedImage bg, bg0, newGame, quitButton;
     public static BufferedImage t1, bullet, blood, t2;
     public static BufferedImage n1, n2;
-    public static List<BufferedImage> aHead, normalEnermy, normalEnemyF, tanker, tankerF;
+    public static List<BufferedImage> aHead, normalEnermy, normalEnemyF, tanker, tankerF, boss, bossF;
+    public static List<BufferedImage> normalTower, fireTower, landTower, normalBullet, fireBullet, landBullet;
     public static Image start;
 
     public static BufferedImage resize(BufferedImage img, int height, int width) {
@@ -36,6 +37,16 @@ public class Assets {
         normalEnemyF = new ArrayList<>();
         tanker = new ArrayList<>();
         tankerF = new ArrayList<>();
+        boss = new ArrayList<>();
+        bossF = new ArrayList<>();
+
+        normalTower = new ArrayList<>();
+        fireTower = new ArrayList<>();
+        landTower = new ArrayList<>();
+
+        normalBullet = new ArrayList<>();
+        fireBullet = new ArrayList<>();
+        landBullet = new ArrayList<>();
 
         // add normal enemy
         SpriteSheet n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w1.png"));
@@ -210,89 +221,475 @@ public class Assets {
         n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w1.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w2.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w2.png"));
         n2 = n.crop(0,0,339, 285);
         n2 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w3.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w3.png"));
         n2 = n.crop(0,0,339, 285);
         n2 = resize(n2, eHeight, eWidth);
-        normalEnermy.add(n2);
+        tanker.add(n2);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w4.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w4.png"));
         n2 = n.crop(0,0,339, 285);
         n2 = resize(n2, eHeight, eWidth);
-        normalEnermy.add(n2);
+        tanker.add(n2);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w5.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w5.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w6.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w6.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w7.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w7.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w8.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w8.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w9.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w9.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w10.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w10.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w11.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w11.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
-        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w12.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w12.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w13.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w13.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w14.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w14.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w15.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w15.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w16.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w16.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w17.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w17.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w18.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w18.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w19.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w19.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/normal/w20.png"));
+        tanker.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w20.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
-        normalEnermy.add(n1);
+        tanker.add(n1);
 
         //end add tanker
+        //add flip tanker
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w1f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
 
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w2f.png"));
+        n2 = n.crop(0,0,339, 285);
+        n2 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w3f.png"));
+        n2 = n.crop(0,0,339, 285);
+        n2 = resize(n2, eHeight, eWidth);
+        tankerF.add(n2);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w4f.png"));
+        n2 = n.crop(0,0,339, 285);
+        n2 = resize(n2, eHeight, eWidth);
+        tankerF.add(n2);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w5f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w6f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w7f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w8f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w9f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w10f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w11f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w12f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w13f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w14f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w15f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w16f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w17f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w18f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w19f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/tank/w20f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        tankerF.add(n1);
+        //end add flip tanker
+        //add boss
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w0.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w1.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w2.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w3.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w4.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w5.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w6.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w7.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w8.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w9.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w10.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w11.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w12.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w13.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w14.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w15.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w16.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w17.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w18.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        boss.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w19.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+
+        //end add boss
+        //add flip boss
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w0f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w1f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w2f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w3f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w4f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w5f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w6f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w7f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w8f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w9f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w10f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w11f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w12f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w13f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w14f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w15f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w16f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w17f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w18f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w19f.png"));
+        n1 = n.crop(0,0,339, 285);
+        n1 = resize(n1, eHeight, eWidth);
+        bossF.add(n1);
+        //end add flip boss
+
+        //add normal tower
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower1/t1.png"));
+        n1 = n.crop(0,0,200, 200);
+
+        normalTower.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower1/t2.png"));
+        n1 = n.crop(0,0,200, 200);
+
+        normalTower.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower1/t3.png"));
+        n1 = n.crop(0,0,200, 200);
+
+        normalTower.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower1/t4.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        normalTower.add(n1);
+
+        //end add normal tower
+
+        //add fire tower
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower2/t1.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        fireTower.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower2/t2.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        fireTower.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower2/t3.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        fireTower.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower2/t4.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        fireTower.add(n1);
+
+        //end add fire tower
+
+        //add land tower
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower3/t1.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        landTower.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower3/t2.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        landTower.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower3/t3.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        landTower.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/tower/Tower3/t4.png"));
+        n1 = n.crop(0,0,300, 300);
+
+        landTower.add(n1);
+        //end add land tower
+        //add normal bullet
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet1/40.png"));
+        n1 = n.crop(0,0,40, 32);
+
+        normalBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet1/41.png"));
+        n1 = n.crop(0,0,55, 46);
+
+        normalBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet1/42.png"));
+        n1 = n.crop(0,0,63, 59);
+
+        normalBullet.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet1/43.png"));
+        n1 = n.crop(0,0,96, 87);
+
+        normalBullet.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet1/44.png"));
+        n1 = n.crop(0,0,109, 118);
+
+        normalBullet.add(n1);
+
+        //end add normal bullet
+
+        //add fire bullet
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet2/35.png"));
+        n1 = n.crop(0,0,41, 94);
+
+        fireBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet2/36.png"));
+        n1 = n.crop(0,0,79, 64);
+
+        fireBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet2/37.png"));
+        n1 = n.crop(0,0,82, 88);
+
+        fireBullet.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet2/38.png"));
+        n1 = n.crop(0,0,108, 108);
+
+        fireBullet.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet2/39.png"));
+        n1 = n.crop(0,0,122, 119);
+
+        fireBullet.add(n1);
+
+        //end add fire bullet
+
+        //add land tower
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet3/29.png"));
+        n1 = n.crop(0,0,62, 57);
+
+        landBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet3/30.png"));
+        n1 = n.crop(0,0,46, 38);
+
+        landBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet3/31.png"));
+        n1 = n.crop(0,0,53, 49);
+
+        landBullet.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet3/32.png"));
+        n1 = n.crop(0,0,80, 70);
+        landBullet.add(n1);
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet3/33.png"));
+        n1 = n.crop(0,0,89, 74);
+
+        landBullet.add(n1);
+
+        n = new SpriteSheet(imageLoader.loadImage("image/bullet/Bullet3/34.png"));
+        n1 = n.crop(0,0,106, 104);
+
+        landBullet.add(n1);
+
+        //end add land tower
 
         blood = bloodBar.crop(20,0,1250,90);
         blood = resize(blood,6,70);

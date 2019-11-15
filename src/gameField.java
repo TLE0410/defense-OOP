@@ -22,7 +22,11 @@ public class gameField {
     //map
 
     private boolean isCount, ss;
+    boolean inTarget = false;
     private int wave = 0;
+
+    //tower
+    private int towerKind = 0;
 
     public gameField (Game game) {
         isDragging = false;
@@ -38,7 +42,7 @@ public class gameField {
         //constructor enemy
         enemies = new ArrayList<>();
 
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < 5; ++i) {
                 enemies.add(new NormalEnemy(i*(-100) - 100, 50));
         }
         ss = false;
@@ -55,11 +59,11 @@ public class gameField {
     }
 
     public void tick() {
-        System.out.println("number enemy " + enemies.size());
+
         map.tick();
         isCount = false;
         if (!ss) {
-            if (map.delta < 10) {
+            if (map.delta < 5) {
                 isCount = true;
             } else {
                 ss = true;
@@ -105,8 +109,8 @@ public class gameField {
                 map.delta = -1;
             */
             if (enemies.isEmpty()) {
-                for (int i = 0; i < 5; ++i) {
-                    enemies.add(new NormalEnemy(-i*30, 50));
+                for (int i = 0; i < 10; ++i) {
+                    enemies.add(new tank(-i*100, 50));
                 }
                 return;
             }
@@ -166,7 +170,7 @@ public class gameField {
                                 // System.out.println("y out bound");
                             } else {
                                 System.out.println(e.x + " " + e.y);
-                                //System.out.println("never call me");
+                                System.out.println("never call me");
                                 e.left();
                             }
 
@@ -185,6 +189,9 @@ public class gameField {
             }
 
             for (Tower t : towers) {
+
+                t.fight = false;
+
                 for (int i =0; i < 5 - enemies.size(); ++i) {
                     t.bullet.tick();
                 }
@@ -193,10 +200,16 @@ public class gameField {
                     Enemy e = enemies.get(i);
                     int dis = (int) Math.sqrt((t.x - e.x) * (t.x - e.x) + (t.y - e.y) * (t.y - e.y));
 
+                    //tower active
+                    if (dis <= t.scope)
+                        t.fight = true;
+
                     if (dis <= t.scope && e.health > 0) {
-                        //System.out.println("choose");
+                        System.out.println("choose");
                         t.bullet.choose(e);
+
                     } else {
+
                      //   System.out.println("dis " + dis);
                         t.bullet.choose(null);
                     }
@@ -207,22 +220,46 @@ public class gameField {
 
                      */
                     //Collision
+                    // if enemy cross over bullet
+
                     if (Math.abs(t.bullet.x - e.x) <= t.bullet.scope && Math.abs(t.bullet.y - e.y) <= t.bullet.scope && e.health > 0) {
                         enemies.get(i).health -= t.bullet.dame;
+                        if (enemies.get(i).speed > 0.5)
+                            enemies.get(i).speed -= t.bullet.slowDown;
+                        inTarget = true;
                     }
+
+                    if (inTarget && Math.abs(t.bullet.x - e.x) > t.bullet.scope +1 &&Math.abs(t.bullet.x - e.x) <= t.bullet.scope*15 && Math.abs(t.bullet.y - e.y) <= t.bullet.scope*10 && e.health > 0) {
+                        enemies.get(i).health -= t.bullet.largeDame;
+                        inTarget = false;
+                    }
+
                 }
             }
 
             //cacth mouse event
+
             if (Game.getMouseManager().isLeftPressed()) {
 
                 sPX = Game.getMouseManager().prX;
                 sPY = Game.getMouseManager().prY;
-
+                //pick tower
                 if (sPX >= 1000 && sPX <= 1200 && sPY >= 100 && sPY <= 300) {
 
                     isDragging = true;
                     Game.getMouseManager().leftPressed = false;
+                    towerKind = 1;
+                } else if (sPX >= 1000 && sPX <= 1200 && sPY >= 300 && sPY <= 600) {
+
+                    isDragging = true;
+                    Game.getMouseManager().leftPressed = false;
+                    towerKind = 2;
+
+                } else if (sPX >= 1000 && sPX <= 1200 && sPY >= 600 && sPY <= 900) {
+
+                    isDragging = true;
+                    Game.getMouseManager().leftPressed = false;
+                    towerKind = 3;
                 }
 
                 if (sPX >= 1190 && sPY >= 660) {
@@ -276,30 +313,43 @@ public class gameField {
         }
 
         // draw instance tower
-        g.drawImage(Assets.t1, 1100, 150, null);
-        g.drawImage(Assets.t1, 1100, 350, null);
-        g.drawImage(Assets.t1, 1100, 550, null);
+        g.drawImage(Assets.resize(Assets.normalTower.get(3), 80,100), 1100, 150, null);
+        g.drawImage(Assets.resize(Assets.fireTower.get(3), 120,140), 1100, 350, null);
+        g.drawImage(Assets.resize(Assets.landTower.get(3), 120,140), 1100, 550, null);
 
         //land tower
         if (isDragging) {
 
             if (Game.getMouseManager().rightPressed)
                 isDragging = false;
-            int prX = Game.getMouseManager().getMouseX() - Assets.t1.getWidth()/2;
-            int prY = Game.getMouseManager().getMouseY() - Assets.t1.getHeight();
+            int prX = Game.getMouseManager().getMouseX() - 100/2;
+            int prY = Game.getMouseManager().getMouseY() - 120/2;
 
-
-            g.drawImage(Assets.t1,Game.getMouseManager().getMouseX() - Assets.t1.getWidth()/2, Game.getMouseManager().getMouseY() - Assets.t1.getHeight(), null);
+            if (towerKind == 1)
+                g.drawImage(Assets.resize(Assets.normalTower.get(3),80,100),Game.getMouseManager().getMouseX() - 80/2, Game.getMouseManager().getMouseY() - 100/2, null);
+            else if (towerKind == 2) {
+                g.drawImage(Assets.resize(Assets.fireTower.get(3),120,140),Game.getMouseManager().getMouseX() - 120/2, Game.getMouseManager().getMouseY()  - 140/2, null);
+            } else if (towerKind == 3) {
+                g.drawImage(Assets.resize(Assets.landTower.get(3),120,140),Game.getMouseManager().getMouseX() - 120/2, Game.getMouseManager().getMouseY() - 140/2, null);
+            }
 
             if (Game.getMouseManager().isLeftPressed()) {
 
                 System.out.println("! left press");
 
                 // if position of tower valid
+                //land tower
                if (map.isLandTower(prX, prY + Assets.t1.getHeight()) && prX > 0 && prX < 1000 && prY > 0 && prY < 1000 && gold >= 5) {
-                   towers.add(new NormalTower(prX, prY));
-
-                   gold -= 5;
+                   if (towerKind == 1) {
+                       towers.add(new NormalTower(prX, prY));
+                       gold -= 5;
+                   } else if (towerKind == 2) {
+                       towers.add(new fireTower(prX, prY));
+                       gold -= 10;
+                   } else if (towerKind == 3) {
+                       towers.add(new landTower(prX, prY));
+                       gold -= 10;
+                   }
                }
                isDragging = false;
             }

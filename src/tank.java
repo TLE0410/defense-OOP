@@ -1,10 +1,10 @@
 import java.awt.*;
 
-public class NormalEnemy extends Enemy {
+public class tank extends Enemy{
 
-    public NormalEnemy (int x, int y) {
+    public tank (int x, int y) {
         super(x, y);
-        health = 50;
+        health = 100;
         speed = 1;
         armor = 20;
         isAhead = true;
@@ -24,10 +24,10 @@ public class NormalEnemy extends Enemy {
     public void render(Graphics g) {
         g.drawImage(Assets.resize(Assets.blood,5, health), (int)x - health/10, (int)y - 15, null);
         if (isAhead)
-            g.drawImage(Assets.normalEnermy.get(act), (int)x, (int)y, null);
+            g.drawImage(Assets.tanker.get(act), (int)x, (int)y, null);
         else {
-           // System.out.println("flip is calling");
-            g.drawImage(Assets.resize(Assets.normalEnemyF.get(act),Assets.eHeight, Assets.eWidth), (int)x, (int)y, null);
+            // System.out.println("flip is calling");
+            g.drawImage(Assets.resize(Assets.tankerF.get(act),Assets.eHeight, Assets.eWidth), (int)x, (int)y, null);
         }
     }
 

@@ -10,7 +10,7 @@ public class Map1 extends Map {
     }
 
     @Override
-    public boolean check(int x, int y) {
+    public boolean check(double x, double y) {
 
         if (x <= maxX && x >= minX) {
             for (int i = 0; i < 3; ++i) {
@@ -24,26 +24,26 @@ public class Map1 extends Map {
     }
 
     @Override
-    public boolean left(int x, int y) {
+    public boolean left(double x, double y) {
         if ((y >= minY[0] && y <= maxY[0]) ||(y >= minY[2] && y <= maxY[2]))
             return true;
         return false;
     }
 
     @Override
-    public boolean right(int x, int y) {
+    public boolean right(double x, double y) {
         if (y >= minY[1] && y <= maxY[1])
             return true;
         return false;
     }
 
     @Override
-    public boolean up(int x, int y) {
+    public boolean up(double x, double y) {
         return false;
     }
 
     @Override
-    public boolean down(int x, int y) {
+    public boolean down(double x, double y) {
 
         if ((y <= maxY[1] && x >= maxX && x >= maxX - 50) || (y <= maxY[2] && y >= minY[1] && x <= 100)) {
             System.out.println("down am calling");

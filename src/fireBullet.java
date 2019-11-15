@@ -1,6 +1,7 @@
 import java.awt.*;
 
-public class NormalBullet extends Bullet {
+public class fireBullet extends Bullet {
+
     private final double initX, initY;
     private int timeHit;
     private boolean isBreak;
@@ -11,7 +12,7 @@ public class NormalBullet extends Bullet {
     private double bX, bY;
     private int act, timeBreak;
 
-    public NormalBullet(int x, int y) {
+    public fireBullet(int x, int y) {
         super(x, y);
         initX = x;
         initY = y;
@@ -27,9 +28,8 @@ public class NormalBullet extends Bullet {
         super.speed = 1;
         super.scope = 5;
         act = 1;
-
         slowDown = 0;
-        largeDame = 0;
+        largeDame = 2;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class NormalBullet extends Bullet {
         else
             isReady = false;
         if (isReady) {
-           // System.out.println("i am ready " + e.x +" " + e.y);
+            // System.out.println("i am ready " + e.x +" " + e.y);
             target = e;
         }
     }
@@ -55,14 +55,14 @@ public class NormalBullet extends Bullet {
         //System.out.println(eX+" "+eY);
         if (target != null) {
             if (x - eX > 0)
-                eX = target.x - (speed /(int)target.speed)*2;
+                eX = target.x - (speed /target.speed)*2;
             else
-                eX = target.x + (speed /(int)target.speed)*2;
+                eX = target.x + (speed /target.speed)*2;
             eY = target.y;
         } else {
             //System.out.println("no target");
         }
-       // double dis = Math.sqrt((x-eX)*(x-eY) + (y - eY)*(y - eY));
+        // double dis = Math.sqrt((x-eX)*(x-eY) + (y - eY)*(y - eY));
         if (timeHit <= 0 && eY !=0 && eX!= 0) {
             //System.out.println("shooting");
             boolean pX = x < eX;
@@ -106,10 +106,10 @@ public class NormalBullet extends Bullet {
     public void render(Graphics g) {
 
         if (timeHit <= 0 && x != initX && y != initY)
-            g.drawImage(Assets.normalBullet.get(0),(int) x,(int) y, null);
-       if (isBreak ) {
+            g.drawImage(Assets.resize(Assets.fireBullet.get(0), 60,45),(int) x,(int) y, null);
+        if (isBreak ) {
 
-            g.drawImage(Assets.normalBullet.get(act),(int) bX ,(int) bY ,null);
+            g.drawImage(Assets.fireBullet.get(act),(int) bX ,(int) bY ,null);
 
             if (act == 3) {
                 isBreak = false;

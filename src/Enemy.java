@@ -4,7 +4,7 @@ public abstract class Enemy {
     protected int health;
     protected double speed;
     protected int armor;
-    protected int x, y;
+    protected double x, y;
     protected boolean isAhead, isStraight;
     protected int act;
 

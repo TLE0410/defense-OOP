@@ -20,7 +20,9 @@ public class Map0 extends Map {
     }
 
     @Override
-    public boolean check(int x, int y) {
+    public boolean check(double a, double b) {
+        int x = (int)a;
+        int y = (int)b;
         if (x >= 104 && x <= 860) {
             for (int i = 0; i < 3; ++i) {
                 if (y >= minY[i] && y <= maxY[i])
@@ -42,26 +44,33 @@ public class Map0 extends Map {
 
 
     @Override
-    public boolean left(int x, int y) {
+    public boolean left(double a, double b) {
+        int x = (int)a;
+        int y = (int)b;
         if ((y >= minY[0] && y <= maxY[0]) ||(y >= minY[2] && y <= maxY[2]))
             return true;
         return false;
     }
 
     @Override
-    public boolean right(int x, int y) {
+    public boolean right(double a, double b) {
+        int x = (int)a;
+        int y = (int)b;
         if (y >= minY[1] && y <= maxY[1])
             return true;
         return false;
     }
 
     @Override
-    public boolean up(int x, int y) {
+    public boolean up(double a, double b) {
         return false;
     }
 
     @Override
-    public boolean down(int x, int y) {
+    public boolean down(double a, double b) {
+
+        int x = (int)a;
+        int y = (int)b;
 
         if ((y <= minY[1] + 20 && x >= 860) || (y <= minY[2] +20 && y >= minY[1] && x <= 100)) {
 
