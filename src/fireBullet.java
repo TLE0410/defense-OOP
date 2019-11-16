@@ -21,7 +21,7 @@ public class fireBullet extends Bullet {
         isBreak = false;
         eX = 0;
         eY = 0;
-        time = 50;
+        time = 70;
         timeBreak = 10;
 
         super.dame = 10;

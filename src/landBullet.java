@@ -20,15 +20,16 @@ public class landBullet extends Bullet {
         isBreak = false;
         eX = 0;
         eY = 0;
-        time = 50;
+        time = 150;
         timeBreak = 10;
 
-        super.dame = 10;
+        super.dame = 9;
         super.speed = 1;
         super.scope = 5;
         act = 1;
 
-        slowDown = 0.1;
+        largeDame = 0;
+        slowDown = 0.3;
     }
 
     @Override
@@ -105,7 +106,7 @@ public class landBullet extends Bullet {
     public void render(Graphics g) {
 
         if (timeHit <= 0 && x != initX && y != initY)
-            g.drawImage(Assets.resize(Assets.landBullet.get(0),45,60),(int) x,(int) y, null);
+            g.drawImage(Assets.resize(Assets.landBullet.get(0),40,50),(int) x,(int) y, null);
         if (isBreak ) {
 
             g.drawImage(Assets.landBullet.get(act),(int) bX , (int) bY ,null);

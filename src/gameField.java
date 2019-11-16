@@ -109,9 +109,16 @@ public class gameField {
                 map.delta = -1;
             */
             if (enemies.isEmpty()) {
-                for (int i = 0; i < 10; ++i) {
-                    enemies.add(new tank(-i*100, 50));
+                if (wave >= 0) {
+                    for (int i = 0; i < 10; ++i) {
+                        enemies.add(new tank(-i * 100, 50));
+                    }
+
                 }
+                if (wave >= 1) {
+                    enemies.add(new Boss(-100, 50));
+                }
+                wave ++;
                 return;
             }
 
@@ -249,7 +256,7 @@ public class gameField {
                     isDragging = true;
                     Game.getMouseManager().leftPressed = false;
                     towerKind = 1;
-                } else if (sPX >= 1000 && sPX <= 1200 && sPY >= 300 && sPY <= 600) {
+                } else if (sPX >= 1000 && sPX <= 1200 && sPY >= 300 && sPY < 550) {
 
                     isDragging = true;
                     Game.getMouseManager().leftPressed = false;

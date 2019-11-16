@@ -63,6 +63,7 @@ public class Map0 extends Map {
 
     @Override
     public boolean up(double a, double b) {
+        
         return false;
     }
 

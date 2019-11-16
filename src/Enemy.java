@@ -42,22 +42,27 @@ public abstract class Enemy {
     }
     public void left () {
         x += this.speed;
-        y += Math.random()*(1-(-1)+1) + (-1);
+        y += Math.random()*(1 +1);
+        y -= 1;
+        System.out.println(y);
         isAhead = true;
     }
     public void right () {
         x -= this.speed;
-        y += Math.random()*(1-(-1)+1) + (-1);
+        y += Math.random()*(1+1);
+        y -= 1;
         isAhead = false;
     }
     public void down () {
        // System.out.println("go down");
         y += this.speed;
-        x += Math.random()*(1-(-1)+1) + (-1);
+        x += Math.random()*(1+1);
+        x -=1;
     }
     public void up () {
         y -= this.speed;
-        x += Math.random()*(1-(-1)+1) + (-1);
+        x += Math.random()*2;
+        x-=1;
     }
 
 }

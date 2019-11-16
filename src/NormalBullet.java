@@ -20,10 +20,10 @@ public class NormalBullet extends Bullet {
         isBreak = false;
         eX = 0;
         eY = 0;
-        time = 50;
+        time = 80;
         timeBreak = 10;
 
-        super.dame = 10;
+        super.dame = 8;
         super.speed = 1;
         super.scope = 5;
         act = 1;
