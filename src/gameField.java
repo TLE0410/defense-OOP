@@ -1,5 +1,8 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import java.awt.*;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
@@ -28,7 +31,26 @@ public class gameField {
     //tower
     private int towerKind = 0;
 
+    //audio
+
+    private audio pickSound ,deadSound , shootSoud;
+
     public gameField (Game game) {
+        //audio
+        try {
+           //pickSound = new audio("music/sfx/item-collect.wav");
+           // deadSound = new audio("music/sfx/enemy-explosion.wav");
+            shootSoud = new audio("music/sfx/player-shoot.wav");
+
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+
+
         isDragging = false;
         this.game = game;
         head = 10;
@@ -54,6 +76,8 @@ public class gameField {
     }
 
 
+
+
     public void addMap() {
         maps.add(new Map0());
     }
@@ -63,7 +87,7 @@ public class gameField {
         map.tick();
         isCount = false;
         if (!ss) {
-            if (map.delta < 5) {
+            if (map.delta < 10) {
                 isCount = true;
             } else {
                 ss = true;
@@ -127,6 +151,10 @@ public class gameField {
                     for (Enemy e : enemies) {
                         e.tick();
                         if (e.health <= 0) {
+                            //sound
+                            deadSound = new audio("music/sfx/enemy-explosion.wav");
+                            deadSound.play();
+
                             enemies.remove(e);
                             gold += 5;
                             continue;
@@ -235,6 +263,8 @@ public class gameField {
                             enemies.get(i).speed -= t.bullet.slowDown;
                         inTarget = true;
                     }
+                    if (enemies.get(i).speed < 1)
+                           enemies.get(i).speed += 0.005;
 
                     if (inTarget && Math.abs(t.bullet.x - e.x) > t.bullet.scope +1 &&Math.abs(t.bullet.x - e.x) <= t.bullet.scope*15 && Math.abs(t.bullet.y - e.y) <= t.bullet.scope*10 && e.health > 0) {
                         enemies.get(i).health -= t.bullet.largeDame;
@@ -250,6 +280,21 @@ public class gameField {
 
                 sPX = Game.getMouseManager().prX;
                 sPY = Game.getMouseManager().prY;
+
+                //sound
+
+                try {
+                    pickSound = new audio("music/sfx/item-collect.wav");
+                } catch (UnsupportedAudioFileException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (LineUnavailableException e) {
+                    e.printStackTrace();
+                }
+                pickSound.play();
+
+
                 //pick tower
                 if (sPX >= 1000 && sPX <= 1200 && sPY >= 100 && sPY <= 300) {
 
@@ -368,7 +413,7 @@ public class gameField {
         if (map.delta <= 8 && map.delta >= 0 && isCount) {
             int x =8 - (int) map.delta;
             g.setColor(Color.red);
-            g.drawString(x + "", 60,80);
+            g.drawString(x + "", 60,110);
         }
 
         // default quit button

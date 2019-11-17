@@ -23,13 +23,13 @@ public class landBullet extends Bullet {
         time = 150;
         timeBreak = 10;
 
-        super.dame = 9;
+        super.dame = 3;
         super.speed = 1;
         super.scope = 5;
         act = 1;
 
         largeDame = 0;
-        slowDown = 0.3;
+        slowDown = 0.5;
     }
 
     @Override
@@ -55,15 +55,17 @@ public class landBullet extends Bullet {
         //System.out.println(eX+" "+eY);
         if (target != null) {
             if (x - eX > 0)
-                eX = target.x - (speed /target.speed)*2;
+                eX = target.x;
             else
-                eX = target.x + (speed /target.speed)*2;
+                eX = target.x;
             eY = target.y;
         } else {
             //System.out.println("no target");
         }
         // double dis = Math.sqrt((x-eX)*(x-eY) + (y - eY)*(y - eY));
         if (timeHit <= 0 && eY !=0 && eX!= 0) {
+            if (x == initX && y == initY)
+                shootSound();
             //System.out.println("shooting");
             boolean pX = x < eX;
             boolean pY = y < eY;

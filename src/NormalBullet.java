@@ -45,6 +45,7 @@ public class NormalBullet extends Bullet {
             isReady = false;
         if (isReady) {
            // System.out.println("i am ready " + e.x +" " + e.y);
+
             target = e;
         }
     }
@@ -64,6 +65,8 @@ public class NormalBullet extends Bullet {
         }
        // double dis = Math.sqrt((x-eX)*(x-eY) + (y - eY)*(y - eY));
         if (timeHit <= 0 && eY !=0 && eX!= 0) {
+            if (x == initX && y == initY)
+                shootSound();
             //System.out.println("shooting");
             boolean pX = x < eX;
             boolean pY = y < eY;

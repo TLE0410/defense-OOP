@@ -1,9 +1,12 @@
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
+import java.io.IOException;
 
 public class Game implements Runnable{
     protected Display display;
@@ -23,6 +26,10 @@ public class Game implements Runnable{
     //State
     private State gameState;
 
+    //audio
+
+    private audio titleSound,optionSound;
+
     public Game(String title, int width, int height){
 
         this.title = title;
@@ -30,17 +37,45 @@ public class Game implements Runnable{
         this.height = height;
         mouseManager = new MouseManager();
 
+        try {
+            titleSound = new audio("music/title.wav");
+            optionSound = new audio("music/sfx/option.wav");
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
+
+
+
+
         init();
 
     }
     public void waiting () {
         display.game = this;
 
+        titleSound.play();
+
         while (true) {
             System.out.print("");
+
             if (getMouseManager().prX >= 500 && getMouseManager().prX < 780 && getMouseManager().prY > 250 && getMouseManager().prY < 360) {
                 start();
-               // System.out.println("pressing");
+                optionSound.play();
+                try {
+                    titleSound.stop();
+                } catch (UnsupportedAudioFileException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (LineUnavailableException e) {
+                    e.printStackTrace();
+                }
+                // System.out.println("pressing");
+
                 display.frame.remove(display.pane);
 
                 break;
@@ -98,6 +133,19 @@ public class Game implements Runnable{
     }
 
     public void run(){
+
+        try {
+            audio inGameSound = new audio("music/1.wav");
+            inGameSound.Loop();
+            inGameSound.desVolume(20);
+            inGameSound.play();
+        } catch (UnsupportedAudioFileException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
 
         int fps = 60;
         double timePerTick = 100000000/fps;
