@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="95d744b8-229b-424b-ab4c-c79775540c1e" name="Default Changelist" comment="add music to game">
-      <change afterPath="$PROJECT_DIR$/src/audio.java" afterDir="false" />
+    <list default="true" id="95d744b8-229b-424b-ab4c-c79775540c1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/gameField.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/gameField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Bullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NormalBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NormalBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fireBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fireBullet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gameField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/landBullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/landBullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/bullets.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/cyan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/explosion.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/pink.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/bullet/yellow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Bullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Bullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/Launcher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/Launcher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/defense OOP/NormalBullet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/defense OOP/NormalBullet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assets.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/gameField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="63" />
+            <state relative-caret-position="-2074">
+              <caret line="285" column="21" selection-start-line="285" selection-start-column="21" selection-end-line="285" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,19 +46,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/landTower.java">
+        <entry file="file://$PROJECT_DIR$/src/imageLoader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+            <state relative-caret-position="153">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Bullet.java">
+        <entry file="file://$PROJECT_DIR$/src/Assets.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,7 +72,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/fireBullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="1139">
               <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
             </state>
           </provider>
@@ -70,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NormalBullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="1139">
               <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="68" selection-end-column="29" />
             </state>
           </provider>
@@ -79,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/landBullet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="1139">
               <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
             </state>
           </provider>
@@ -97,7 +108,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="85">
               <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -109,22 +120,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+            <state relative-caret-position="17">
+              <caret line="139" column="35" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5288#5289#0" expanded="true" />
-                <element signature="e#5323#5324#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/audio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+            <state relative-caret-position="748">
+              <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,15 +205,15 @@
         <option value="$PROJECT_DIR$/src/Map1.java" />
         <option value="$PROJECT_DIR$/src/Map0.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
-        <option value="$PROJECT_DIR$/src/Assets.java" />
         <option value="$PROJECT_DIR$/src/Launcher.java" />
         <option value="$PROJECT_DIR$/src/gameField.java" />
         <option value="$PROJECT_DIR$/src/Bullet.java" />
         <option value="$PROJECT_DIR$/src/NormalBullet.java" />
         <option value="$PROJECT_DIR$/src/fireBullet.java" />
         <option value="$PROJECT_DIR$/src/landBullet.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/audio.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
+        <option value="$PROJECT_DIR$/src/Assets.java" />
       </list>
     </option>
   </component>
@@ -220,6 +229,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,42 +246,7 @@
             <path>
               <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
               <item name="defense OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="bullet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defense OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="bullet" type="462c0819:PsiDirectoryNode" />
-              <item name="Bullet1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defense OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="bullet" type="462c0819:PsiDirectoryNode" />
-              <item name="Bullet2" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defense OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="bullet" type="462c0819:PsiDirectoryNode" />
-              <item name="Bullet3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defense OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="tower" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="defense OOP" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
-              <item name="tower" type="462c0819:PsiDirectoryNode" />
-              <item name="Tower2" type="462c0819:PsiDirectoryNode" />
+              <item name="music" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="defense OOP" type="b2602c69:ProjectViewProjectNode" />
@@ -281,8 +257,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -393,14 +367,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573917792883</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add music to game">
+      <created>1574014620820</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574014620820</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17776097" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18229954" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -409,7 +390,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32405892" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" visible="true" weight="0.32405892" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -556,16 +537,6 @@
     <entry file="file://$PROJECT_DIR$/image/tower/Tower1/t1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/imageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/myDraggableComponent.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
@@ -632,16 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Assets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6273">
-          <caret line="373" column="87" selection-start-line="373" selection-start-column="87" selection-end-line="373" selection-end-column="87" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Map0.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1088">
@@ -682,19 +643,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gameField.java">
+    <entry file="file://$PROJECT_DIR$/src/landTower.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="42" column="24" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
+        <state relative-caret-position="527">
           <caret line="34" column="9" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -702,40 +660,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NormalBullet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="68" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fireBullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="1139">
           <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
+    <entry file="file://$PROJECT_DIR$/src/NormalBullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/landTower.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+        <state relative-caret-position="1139">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="68" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/landBullet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="1139">
           <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
         </state>
       </provider>
@@ -747,22 +688,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="138" column="31" selection-start-line="138" selection-start-column="31" selection-end-line="138" selection-end-column="31" />
+        <state relative-caret-position="85">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5288#5289#0" expanded="true" />
-            <element signature="e#5323#5324#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/audio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="42" column="37" selection-start-line="42" selection-start-column="37" selection-end-line="42" selection-end-column="37" />
+        <state relative-caret-position="748">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="139" column="35" selection-start-line="139" selection-start-column="35" selection-end-line="139" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/imageLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Assets.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/gameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2074">
+          <caret line="285" column="21" selection-start-line="285" selection-start-column="21" selection-end-line="285" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

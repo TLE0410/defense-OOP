@@ -9,7 +9,7 @@ public class Assets {
     //public static final int width = 70, height = 130, offset = 26, fOffset = 22;
     //public static final int offsetf = 28, fOffsetf = 39, widthf = 70, offsetW = 12;
     public static BufferedImage bg, bg0, newGame, quitButton;
-    public static BufferedImage t1, bullet, blood, t2;
+    public static BufferedImage t1, bullet, blood, t2, wall;
     public static BufferedImage n1, n2;
     public static List<BufferedImage> aHead, normalEnermy, normalEnemyF, tanker, tankerF, boss, bossF;
     public static List<BufferedImage> normalTower, fireTower, landTower, normalBullet, fireBullet, landBullet;
@@ -28,9 +28,13 @@ public class Assets {
        // SpriteSheet sheet = new SpriteSheet((imageLoader.loadImage("image/bone1.png")));
        // SpriteSheet fsheet = new SpriteSheet((imageLoader.loadImage("image/bonef.png")));
         SpriteSheet tower = new SpriteSheet(imageLoader.loadImage("image/tower/towers.png"));
-        SpriteSheet Bullet = new SpriteSheet(imageLoader.loadImage("image/bullet/bullet.png"));
+
         SpriteSheet bloodBar = new SpriteSheet(imageLoader.loadImage("image/blood/bloodBar.png"));
         start = imageLoader.loadImage("image/menus/start.png");
+
+        //add wall
+
+        wall = imageLoader.loadImage("image/wall.jpg");
 
         aHead = new ArrayList<>();
         normalEnermy = new ArrayList<>();
@@ -694,9 +698,9 @@ public class Assets {
         blood = bloodBar.crop(20,0,1250,90);
         blood = resize(blood,6,70);
         t1 = tower.crop(50,80,460,970);
-        bullet = Bullet.crop(0,0,65,65);
+
         t1 = resize(t1,100,60);
-        bullet = resize(bullet,12,12);
+
 
         /*
         p1 = sheet.crop(fOffset,565,width,height);
