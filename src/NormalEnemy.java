@@ -34,8 +34,8 @@ public class NormalEnemy extends Enemy {
     public void valid () {
         if (x > 975 )
             x = 975;
-        if (y > 685)
-            y = 685;
+        if (y > 675)
+            y = 675;
         if ( y < 45)
             y = 45;
         if (x < 0)

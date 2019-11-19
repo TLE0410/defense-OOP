@@ -55,12 +55,10 @@ public class fireBullet extends Bullet {
         //System.out.println(eX+" "+eY);
         if (target != null) {
             if (x - eX > 0)
-                eX = target.x - (speed /target.speed)*2;
+                eX = target.x ;
             else
-                eX = target.x + (speed /target.speed)*2;
+                eX = target.x;
             eY = target.y;
-        } else {
-            //System.out.println("no target");
         }
         // double dis = Math.sqrt((x-eX)*(x-eY) + (y - eY)*(y - eY));
         if (timeHit <= 0 && eY !=0 && eX!= 0) {
@@ -81,7 +79,7 @@ public class fireBullet extends Bullet {
 
             if (pX && this.x > eX)
                 this.x = eX;
-            if (!pX && x < eY)
+            if (!pX && x < eX)
                 this.x = eX;
             if (pY && y > eY)
                 this.y = eY;
@@ -94,7 +92,7 @@ public class fireBullet extends Bullet {
         }
 
         // check if bullet into enemy or bullet out bound
-        if (x == eX && y == eY || Math.sqrt((x-initX)*(x-initX) + (y - initY)*(y - initY)) >= 100){
+        if (x == eX && y == eY || Math.sqrt((x-initX)*(x-initX) + (y - initY)*(y - initY)) >= 150){
             isBreak = true;
             bX = eX;
             bY = eY;

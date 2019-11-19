@@ -44,7 +44,7 @@ public abstract class Enemy {
         x += this.speed;
         y += Math.random()*(1 +1);
         y -= 1;
-        System.out.println(y);
+        //System.out.println(y);
         isAhead = true;
     }
     public void right () {

@@ -6,7 +6,7 @@ public class landTower extends Tower {
     public landTower(int x, int y) {
         super(x, y);
         this.bullet = new landBullet(x, y);
-        super.scope = 100;
+        super.scope = 140;
     }
 
 

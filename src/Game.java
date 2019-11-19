@@ -137,7 +137,7 @@ public class Game implements Runnable{
         try {
             audio inGameSound = new audio("music/1.wav");
             inGameSound.Loop();
-            inGameSound.desVolume(20);
+            inGameSound.desVolume(25);
             inGameSound.play();
         } catch (UnsupportedAudioFileException e) {
             e.printStackTrace();

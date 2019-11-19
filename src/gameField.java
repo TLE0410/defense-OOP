@@ -12,13 +12,12 @@ public class gameField {
     private List<Tower> towers;
     private Queue<Map> maps;
     private Map map;
-    private int head,gold;
+    private int heart,gold;
     private int numberEnemy;
     private Game game;
 
     private static boolean isDragging;
     private int sPX, sPY;
-    boolean win = false;
 
     private int act = 0;
 
@@ -35,7 +34,12 @@ public class gameField {
 
     private audio pickSound ,deadSound , shootSoud;
 
+    //end game
+    private boolean pause, win;
+
     public gameField (Game game) {
+        pause = false;
+        win = false;
         //audio
         try {
            //pickSound = new audio("music/sfx/item-collect.wav");
@@ -53,8 +57,8 @@ public class gameField {
 
         isDragging = false;
         this.game = game;
-        head = 10;
-        gold = 9999;
+        heart = 10;
+        gold = 50;
         isCount = true;
         numberEnemy = 5;
 
@@ -83,6 +87,11 @@ public class gameField {
     }
 
     public void tick() {
+        System.out.println(enemies.size());
+
+        if (pause || win) {
+            return;
+        }
 
         map.tick();
         isCount = false;
@@ -182,13 +191,13 @@ public class gameField {
                             //check if enemy arrived target
                             if (map.isTarget(e)) {
                                 enemies.remove(e);
-                                head--;
+                                heart--;
                             }
 
                         } else {
                             if (map.isTarget(e)) {
                                 enemies.remove(e);
-                                head--;
+                                heart--;
                             }
                             if (e.x <= 0) {
                                 //System.out.println("x out bound right side");
@@ -204,7 +213,7 @@ public class gameField {
                                 e.y -= e.speed;
                                 // System.out.println("y out bound");
                             } else {
-                                System.out.println(e.x + " " + e.y);
+                                //System.out.println(e.x + " " + e.y);
                                 System.out.println("never call me");
                                 e.left();
                             }
@@ -214,9 +223,7 @@ public class gameField {
 
                     }
                 } catch (Exception e) {
-                    System.out.println("all enemy killed");
-
-                    win = true;
+                    System.out.println("none");
                 }
 
                 // status of enemy
@@ -240,7 +247,7 @@ public class gameField {
                         t.fight = true;
 
                     if (dis <= t.scope && e.health > 0) {
-                        System.out.println("choose");
+                       // System.out.println("choose");
                         t.bullet.choose(e);
 
                     } else {
@@ -255,16 +262,18 @@ public class gameField {
 
                      */
                     //Collision
-                    // if enemy cross over bullet
+                    // if enemy has collision with bullet
 
                     if (Math.abs(t.bullet.x - e.x) <= t.bullet.scope && Math.abs(t.bullet.y - e.y) <= t.bullet.scope && e.health > 0) {
+                        //System.out.println("collision");
                         enemies.get(i).health -= t.bullet.dame;
                         if (enemies.get(i).speed > 0.5)
                             enemies.get(i).speed -= t.bullet.slowDown;
                         inTarget = true;
                     }
+
                     if (enemies.get(i).speed < 1)
-                           enemies.get(i).speed += 0.005;
+                           enemies.get(i).speed += 0.004;
 
                     if (inTarget && Math.abs(t.bullet.x - e.x) > t.bullet.scope +1 &&Math.abs(t.bullet.x - e.x) <= t.bullet.scope*15 && Math.abs(t.bullet.y - e.y) <= t.bullet.scope*10 && e.health > 0) {
                         enemies.get(i).health -= t.bullet.largeDame;
@@ -326,16 +335,26 @@ public class gameField {
 
         map.render(g);
 
-        g.setFont(new Font("TimesRoman", Font.PLAIN, 30));
+        g.setFont(new Font("Chiller", Font.BOLD, 30));
         g.setColor(Color.red);
-        g.drawString("head ", 1030, 50);
-        g.drawString(head +"", 1030, 100);
-        if (head <= 0) {
-            game.stop();
-            g.drawString("lose", 1050, 600);
+        g.drawString("heart ", 1050, 50);
+        g.drawString(heart +"", 1030, 100);
+
+        // lose
+        if (heart <= 0) {
+            g.setFont(new Font("Chiller", Font.BOLD, 70));
+            g.drawString("lose", 500, 350);
+            pause = true;
         }
+        //win
+        if (wave >= 3) {
+            win = true;
+            g.setFont(new Font("Chiller", Font.BOLD, 70));
+            g.drawString("Victory", 500, 350);
+        }
+
         g.setColor(Color.orange);
-        g.drawString("Gold ", 1150,50);
+        g.drawString("Gold ", 1160,50);
         g.drawString(gold+"",1150,100);
 
         if (act >= Assets.aHead.size()-1)

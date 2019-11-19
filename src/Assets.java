@@ -9,7 +9,7 @@ public class Assets {
     //public static final int width = 70, height = 130, offset = 26, fOffset = 22;
     //public static final int offsetf = 28, fOffsetf = 39, widthf = 70, offsetW = 12;
     public static BufferedImage bg, bg0, newGame, quitButton;
-    public static BufferedImage t1, bullet, blood, t2, wall;
+    public static BufferedImage t1, bullet, blood, t2, wall, heart, coin, grass;
     public static BufferedImage n1, n2;
     public static List<BufferedImage> aHead, normalEnermy, normalEnemyF, tanker, tankerF, boss, bossF;
     public static List<BufferedImage> normalTower, fireTower, landTower, normalBullet, fireBullet, landBullet;
@@ -33,9 +33,12 @@ public class Assets {
         start = imageLoader.loadImage("image/menus/start.png");
 
         //add wall
-
+        grass = imageLoader.loadImage("image/back_ground/grass.jpg");
         wall = imageLoader.loadImage("image/wall.jpg");
-
+        heart = imageLoader.loadImage("image/menus/heart.png");
+        heart = resize(heart,25,35);
+        coin = imageLoader.loadImage("image/menus/coin.png");
+        coin = resize(coin, 25,35);
         aHead = new ArrayList<>();
         normalEnermy = new ArrayList<>();
         normalEnemyF = new ArrayList<>();

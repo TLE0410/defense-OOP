@@ -46,7 +46,7 @@ public class Map1 extends Map {
     public boolean down(double x, double y) {
 
         if ((y <= maxY[1] && x >= maxX && x >= maxX - 50) || (y <= maxY[2] && y >= minY[1] && x <= 100)) {
-            System.out.println("down am calling");
+          //  System.out.println("down am calling");
             return true;
         }
         else
@@ -57,7 +57,7 @@ public class Map1 extends Map {
     @Override
     public boolean isTarget(Enemy e) {
         if (e.y > minY[2] && e.x >= maxX - 10) {
-            System.out.println("in target");
+            //System.out.println("in target");
             return true;
         }
         else return false;

@@ -29,7 +29,7 @@ public class landBullet extends Bullet {
         act = 1;
 
         largeDame = 0;
-        slowDown = 0.5;
+        slowDown = 0.4;
     }
 
     @Override
@@ -81,7 +81,7 @@ public class landBullet extends Bullet {
 
             if (pX && this.x > eX)
                 this.x = eX;
-            if (!pX && x < eY)
+            if (!pX && x < eX)
                 this.x = eX;
             if (pY && y > eY)
                 this.y = eY;
@@ -94,7 +94,7 @@ public class landBullet extends Bullet {
         }
 
         // check if bullet into enemy or bullet out bound
-        if (x == eX && y == eY || Math.sqrt((x-initX)*(x-initX) + (y - initY)*(y - initY)) >= 100){
+        if (x == eX && y == eY || Math.sqrt((x-initX)*(x-initX) + (y - initY)*(y - initY)) >= 150){
             isBreak = true;
             bX = eX;
             bY = eY;

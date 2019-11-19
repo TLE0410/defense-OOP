@@ -34,7 +34,7 @@ public class Boss extends Enemy{
     public void valid () {
         if (x > 975 )
             x = 975;
-        if (y > 685)
+        if (y > 655)
             y = 685;
         if ( y < 45)
             y = 45;
