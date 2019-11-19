@@ -48,9 +48,6 @@ public class Game implements Runnable{
             e.printStackTrace();
         }
 
-
-
-
         init();
 
     }
@@ -84,8 +81,6 @@ public class Game implements Runnable{
                 display.frame.dispatchEvent(new WindowEvent(display.frame, WindowEvent.WINDOW_CLOSING));
             }
         }
-
-
     }
 
     private void init(){

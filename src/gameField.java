@@ -283,7 +283,7 @@ public class gameField {
                     }
 
                     if (enemies.get(i).speed < 1)
-                           enemies.get(i).speed += 0.004;
+                           enemies.get(i).speed += 0.002;
 
                     if (inTarget && Math.abs(t.bullet.x - e.x) > t.bullet.scope +1 &&Math.abs(t.bullet.x - e.x) <= t.bullet.scope*15 && Math.abs(t.bullet.y - e.y) <= t.bullet.scope*10 && e.health > 0) {
 
