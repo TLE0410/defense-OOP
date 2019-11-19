@@ -19,6 +19,9 @@ public class fireTower extends Tower {
         }
         if (act > 3)
             act = 0;
-        g.drawImage(Assets.resize(Assets.fireTower.get(act), 120, 140), x, y, null);
+        if (fight)
+            g.drawImage(Assets.resize(Assets.fireTower.get(act), 120, 140), x, y, null);
+        else
+            g.drawImage(Assets.resize(Assets.fireTower.get(3), 120, 140), x, y, null);
     }
 }

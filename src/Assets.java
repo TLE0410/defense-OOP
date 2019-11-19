@@ -471,7 +471,7 @@ public class Assets {
 
         //end add boss
         //add flip boss
-        bossF.add(n1);n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w0f.png"));
+        n = new SpriteSheet(imageLoader.loadImage("image/Enemy/Boss/w0f.png"));
         n1 = n.crop(0,0,339, 285);
         n1 = resize(n1, eHeight, eWidth);
         bossF.add(n1);

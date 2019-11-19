@@ -4,9 +4,9 @@ public class Boss extends Enemy{
 
     public Boss (int x, int y) {
         super(x, y);
-        health = 200;
+        health = 150;
         speed = 1;
-        armor = 20;
+        armor = 50;
         isAhead = true;
     }
 
@@ -22,7 +22,7 @@ public class Boss extends Enemy{
 
     @Override
     public void render(Graphics g) {
-        g.drawImage(Assets.resize(Assets.blood,5, health), (int)x - health/10, (int)y - 15, null);
+        g.drawImage(Assets.resize(Assets.blood,7, health), (int)x - health/10, (int)y - 15, null);
         if (isAhead)
             g.drawImage(Assets.resize(Assets.boss.get(act),Assets.eHeight*2, Assets.eWidth*2), (int)x, (int)y, null);
         else {

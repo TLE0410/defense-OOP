@@ -4,9 +4,9 @@ public class tank extends Enemy{
 
     public tank (int x, int y) {
         super(x, y);
-        health = 100;
+        health = 60;
         speed = 1;
-        armor = 20;
+        armor = 40;
         isAhead = true;
     }
 

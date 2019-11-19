@@ -19,6 +19,9 @@ public class landTower extends Tower {
         }
         if (act > 3)
             act = 0;
-        g.drawImage(Assets.resize(Assets.landTower.get(act), 120, 140), x, y, null);
+        if (fight)
+            g.drawImage(Assets.resize(Assets.landTower.get(act), 120, 140), x, y, null);
+        else
+            g.drawImage(Assets.resize(Assets.landTower.get(3), 120, 140), x, y, null);
     }
 }

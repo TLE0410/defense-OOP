@@ -22,6 +22,6 @@ public class NormalTower extends Tower {
         if (fight)
             g.drawImage(Assets.resize(Assets.normalTower.get(act), 80, 100), x, y, null);
         else
-            g.drawImage(Assets.resize(Assets.normalTower.get(2), 80, 100), x, y, null);
+            g.drawImage(Assets.resize(Assets.normalTower.get(3), 80, 100), x, y, null);
     }
 }

@@ -13,7 +13,7 @@ public class NormalBullet extends Bullet {
 
     public NormalBullet(int x, int y) {
         super(x, y);
-        initX = x;
+        initX = x + 30;
         initY = y;
         timeHit = 0;
         isReady = true;
@@ -23,9 +23,10 @@ public class NormalBullet extends Bullet {
         time = 80;
         timeBreak = 10;
 
-        super.dame = 8;
+        super.dame = 12;
         super.speed = 1;
         super.scope = 5;
+        armour = true;
         act = 1;
 
         slowDown = 0;
@@ -73,6 +74,9 @@ public class NormalBullet extends Bullet {
 
             double speedX = speed ;
             double speedY = speed ;
+            if (eX - x > eY - y)
+                eY += 1;
+            else eX += 2;
 
             if (pX) this.x += speedX ;
             else this.x -= speedX ;

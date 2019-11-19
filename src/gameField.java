@@ -71,6 +71,7 @@ public class gameField {
         for (int i = 0; i < 5; ++i) {
                 enemies.add(new NormalEnemy(i*(-100) - 100, 50));
         }
+
         ss = false;
 
         //constructor tower and bullet
@@ -87,9 +88,13 @@ public class gameField {
     }
 
     public void tick() {
-        System.out.println(enemies.size());
+        //System.out.println(enemies.size());
 
         if (pause || win) {
+            if (Game.getMouseManager().leftPressed) {
+                game = new Game("defense", 1280, 700);
+                game.waiting();
+            }
             return;
         }
 
@@ -266,7 +271,12 @@ public class gameField {
 
                     if (Math.abs(t.bullet.x - e.x) <= t.bullet.scope && Math.abs(t.bullet.y - e.y) <= t.bullet.scope && e.health > 0) {
                         //System.out.println("collision");
-                        enemies.get(i).health -= t.bullet.dame;
+                        if (enemies.get(i).armor <=0 || !t.bullet.armour) {
+                            enemies.get(i).health -= t.bullet.dame;
+                        } else {
+                            enemies.get(i).armor -= t.bullet.dame;
+                            enemies.get(i).health -= t.bullet.dame/2;
+                        }
                         if (enemies.get(i).speed > 0.5)
                             enemies.get(i).speed -= t.bullet.slowDown;
                         inTarget = true;
@@ -276,7 +286,9 @@ public class gameField {
                            enemies.get(i).speed += 0.004;
 
                     if (inTarget && Math.abs(t.bullet.x - e.x) > t.bullet.scope +1 &&Math.abs(t.bullet.x - e.x) <= t.bullet.scope*15 && Math.abs(t.bullet.y - e.y) <= t.bullet.scope*10 && e.health > 0) {
+
                         enemies.get(i).health -= t.bullet.largeDame;
+
                         inTarget = false;
                     }
 

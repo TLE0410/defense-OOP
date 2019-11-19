@@ -14,7 +14,7 @@ public class fireBullet extends Bullet {
 
     public fireBullet(int x, int y) {
         super(x, y);
-        initX = x;
+        initX = x + 30;
         initY = y;
         timeHit = 0;
         isReady = true;
@@ -24,9 +24,10 @@ public class fireBullet extends Bullet {
         time = 70;
         timeBreak = 10;
 
-        super.dame = 10;
+        super.dame = 8;
         super.speed = 1;
         super.scope = 5;
+        armour = false;
         act = 1;
         slowDown = 0;
         largeDame = 2;
@@ -70,6 +71,10 @@ public class fireBullet extends Bullet {
 
             double speedX = speed ;
             double speedY = speed ;
+
+            if (eX - x > eY - y)
+                eY += 1;
+            else eX += 2;
 
             if (pX) this.x += speedX ;
             else this.x -= speedX ;

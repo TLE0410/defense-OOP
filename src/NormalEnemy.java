@@ -6,7 +6,7 @@ public class NormalEnemy extends Enemy {
         super(x, y);
         health = 50;
         speed = 1;
-        armor = 20;
+        armor = 10;
         isAhead = true;
     }
 

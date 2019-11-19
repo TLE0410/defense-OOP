@@ -7,6 +7,7 @@ public abstract class Bullet {
     protected double x, y;
     protected int dame, scope, time;
     protected double slowDown, largeDame, speed;
+    protected boolean armour;
 
     protected boolean isReady;
 

@@ -13,7 +13,7 @@ public class landBullet extends Bullet {
 
     public landBullet(int x, int y) {
         super(x, y);
-        initX = x;
+        initX = x + 30;
         initY = y;
         timeHit = 0;
         isReady = true;
@@ -23,9 +23,10 @@ public class landBullet extends Bullet {
         time = 150;
         timeBreak = 10;
 
-        super.dame = 3;
+        super.dame = 6;
         super.speed = 1;
         super.scope = 5;
+        armour = true;
         act = 1;
 
         largeDame = 0;
@@ -72,6 +73,10 @@ public class landBullet extends Bullet {
 
             double speedX = speed ;
             double speedY = speed ;
+
+            if (eX - x > eY - y)
+                eY += 1;
+            else eX += 2;
 
             if (pX) this.x += speedX ;
             else this.x -= speedX ;
